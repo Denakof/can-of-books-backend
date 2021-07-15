@@ -14,7 +14,7 @@ const { request } = require("express");
 
 const user =require("./Schema")
 
-mongoose.connect("mongodb://localhost:27017/test", {
+mongoose.connect("mongodb://denakof:omaaaar@cluster0-shard-00-00.vmc54.mongodb.net:27017,cluster0-shard-00-01.vmc54.mongodb.net:27017,cluster0-shard-00-02.vmc54.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-5hkrwh-shard-0&authSource=admin&retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -116,7 +116,7 @@ function deleteBookHandler(req, res) {
     }
   });
 }
-server.post("/updateBook/:bookId", updateBookHandler);
+app.post("/updateBook/:bookId", updateBookHandler);
 
 function updateBookHandler(req, res) {
   let index = Number(req.params.bookId);
